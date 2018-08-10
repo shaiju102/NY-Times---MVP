@@ -44,6 +44,15 @@ Prerequisites
 
 The application will be started on the device/emulator and a series of actions will be performed automatically.
 
+#### ANDROID-TEST COVERAGE REPORT
+
+- find createDebugCoverageTest task or execute the command gradlew createDebugCoverageReport from the project root in the terminal;
+- double click;
+- wait for all tests to run
+- Note: you should have your test emulator launched or an Android device connected.
+- When Android Studio notifies you that everything is OK, you'll be able to find a test coverage report at “YOUR_PROJECT_PATH\app\build\reports\coverage\debug\index.html”:
+
+
 License
 --------
 
