@@ -1,4 +1,4 @@
-package ny.shaiju.com.nytimes.adapter;
+package ny.shaiju.com.nytimes.view.adapter;
 
 import android.app.FragmentManager;
 import android.content.Context;

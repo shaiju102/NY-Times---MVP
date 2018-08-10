@@ -2,9 +2,7 @@ package ny.shaiju.com.nytimes.view;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
-import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.Snackbar;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
@@ -19,7 +17,7 @@ import android.view.View;
 import java.util.List;
 
 import ny.shaiju.com.nytimes.R;
-import ny.shaiju.com.nytimes.adapter.ArticlesAdapter;
+import ny.shaiju.com.nytimes.view.adapter.ArticlesAdapter;
 import ny.shaiju.com.nytimes.model.Result;
 import ny.shaiju.com.nytimes.presenter.ArticlePresenter;
 import ny.shaiju.com.nytimes.presenter.ArticlePresenterImpl;
@@ -44,28 +42,10 @@ public class ArticleListActivity extends AppCompatActivity implements ArticlePre
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_item_list);
 
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
-        toolbar.setTitle(getTitle());
+        setupToolbar();
 
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string
-                .navigation_drawer_close);
-        drawer.addDrawerListener(toggle);
-        toggle.syncState();
+        setupNavigationView();
 
-        NavigationView navigationView = findViewById(R.id.nav_view);
-        navigationView.setNavigationItemSelectedListener(this);
-
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
 
         if (findViewById(R.id.item_detail_container) != null) {
             // The detail container view will be present only in the
@@ -76,11 +56,33 @@ public class ArticleListActivity extends AppCompatActivity implements ArticlePre
         }
 
 
+        setPresenter();
+
+
+    }
+
+    private void setPresenter() {
         ArticlePresenter.presenter presenter = new ArticlePresenterImpl(this, new
                 GetArticleIntractorImpl());
         presenter.requestDataFromServer();
+    }
 
+    private void setupNavigationView() {
+        NavigationView navigationView = findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
+    }
 
+    private void setupToolbar() {
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        toolbar.setTitle(getTitle());
+
+        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+                this, drawer, toolbar, R.string.navigation_drawer_open, R.string
+                .navigation_drawer_close);
+        drawer.addDrawerListener(toggle);
+        toggle.syncState();
     }
 
     private void setupRecyclerView(@NonNull RecyclerView recyclerView, List<Result> resultList) {
