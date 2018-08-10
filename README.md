@@ -11,7 +11,7 @@ Prerequisites
 - Latest Android Build Tools
 - Android Support Repository
 
-#Technology used
+# Technology used
 * Clean MVP architecture
 * [Retrofit](https://square.github.io/retrofit/)
 * [Glide](https://github.com/bumptech/glide)
