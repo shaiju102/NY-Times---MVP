@@ -31,7 +31,10 @@ public class ArticleListActivity extends AppCompatActivity implements ArticlePre
         NavigationView.OnNavigationItemSelectedListener {
 
 //Feature1 Comments added.
-    //Feature 1 changes added.
+// Feature 1 changes added.
+
+//Feature2 Comments added.
+// Feature2 changes added.
     /**
      * Whether or not the activity is in two-pane mode, i.e. running on a tablet
      * device.
