@@ -30,6 +30,8 @@ import ny.shaiju.com.nytimes.utils.CommonProgressDialog;
 public class ArticleListActivity extends AppCompatActivity implements ArticlePresenter.MainView,
         NavigationView.OnNavigationItemSelectedListener {
 
+//Feature1 Comments added.
+    //Feature 1 changes added.
     /**
      * Whether or not the activity is in two-pane mode, i.e. running on a tablet
      * device.
