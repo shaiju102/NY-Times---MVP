@@ -39,6 +39,9 @@ public class ArticleListActivity extends AppCompatActivity implements ArticlePre
 // Feature2 Comments1 added.
 // Feature2 Changes1 added.
 
+// Feature2 Branch1 Comments1 added.
+// Feature2 Branch1 Changes1 added.
+
     /**
      * Whether or not the activity is in two-pane mode, i.e. running on a tablet
      * device.
